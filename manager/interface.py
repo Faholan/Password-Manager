@@ -160,10 +160,10 @@ class Interface:
 
         for charrange in characters.ALL:
             rawconf = curconf.get("charselected")
-            if isinstance(rawconf, tuple):
-                conf: t.Tuple[t.Any, ...] = rawconf
+            if isinstance(rawconf, list):
+                conf: t.List[t.Any] = rawconf
             else:
-                conf = ()
+                conf = []
             self.charselected.append(
                 tk.BooleanVar(value=charrange.name in conf),
             )
